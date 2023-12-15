@@ -1,1 +1,78 @@
-[]
+[
+    {
+        "id": "faaa4f54ed7597d7",
+        "type": "tab",
+        "label": "DATA IN",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cdf672981e934209",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "161.132.39.167",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "1de59b82acd33bdc",
+        "type": "mqtt in",
+        "z": "faaa4f54ed7597d7",
+        "name": "",
+        "topic": "data/combined",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "cdf672981e934209",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 180,
+        "wires": [
+            [
+                "a515eb7fd1cbdb66"
+            ]
+        ]
+    },
+    {
+        "id": "a515eb7fd1cbdb66",
+        "type": "debug",
+        "z": "faaa4f54ed7597d7",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 180,
+        "wires": []
+    }
+]
