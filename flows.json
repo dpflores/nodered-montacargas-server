@@ -431,7 +431,8 @@
         "y": 540,
         "wires": [
             [
-                "de158e254d0e9e0f"
+                "de158e254d0e9e0f",
+                "e1a4cf02b81fcc16"
             ]
         ]
     },
@@ -444,7 +445,8 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 770,
