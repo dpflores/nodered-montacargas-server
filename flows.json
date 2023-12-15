@@ -279,7 +279,9 @@
         "x": 200,
         "y": 340,
         "wires": [
-            []
+            [
+                "58d05188537d097c"
+            ]
         ]
     },
     {
@@ -362,7 +364,7 @@
         "type": "debug",
         "z": "f3559f90766b0184",
         "name": "debug 166",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -438,7 +440,7 @@
         "type": "debug",
         "z": "f3559f90766b0184",
         "name": "debug 167",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -465,7 +467,8 @@
         "y": 340,
         "wires": [
             [
-                "a50b653253ed5f6a"
+                "a50b653253ed5f6a",
+                "79ba7b829ccece0f"
             ]
         ]
     },
@@ -483,6 +486,19 @@
         "statusType": "auto",
         "x": 570,
         "y": 280,
+        "wires": []
+    },
+    {
+        "id": "79ba7b829ccece0f",
+        "type": "http response",
+        "z": "f3559f90766b0184",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 600,
+        "y": 320,
         "wires": []
     }
 ]
