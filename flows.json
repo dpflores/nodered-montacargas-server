@@ -324,7 +324,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "gateway_data.gps.speed",
+                "to": "gateway_data.data.gps.speed",
                 "tot": "global"
             }
         ],
