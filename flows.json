@@ -16,6 +16,48 @@
         "env": []
     },
     {
+        "id": "3808b3b0abf131f7",
+        "type": "group",
+        "z": "faaa4f54ed7597d7",
+        "name": "Guardado de data local",
+        "style": {
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "295b8eca5eb373be",
+            "91b59430532c1fb5",
+            "cbaa07d685e2a818",
+            "118a58728bddf7e3",
+            "5aab794bde737cdc",
+            "43c8846d1ce04c26",
+            "d39941b5f2d46475",
+            "e0d359a9a7bf3392"
+        ],
+        "x": 64,
+        "y": 359,
+        "w": 962,
+        "h": 202
+    },
+    {
+        "id": "686d9ccfaccf762f",
+        "type": "group",
+        "z": "faaa4f54ed7597d7",
+        "name": "DELETE ALL DATA MANUALLY (CAREFULL)",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "3f555f6973d84794",
+            "cd4456431ea37fa3",
+            "cfe38dfce77990e9"
+        ],
+        "x": 74,
+        "y": 619,
+        "w": 572,
+        "h": 82
+    },
+    {
         "id": "cdf672981e934209",
         "type": "mqtt-broker",
         "name": "",
@@ -74,7 +116,8 @@
         "wires": [
             [
                 "a515eb7fd1cbdb66",
-                "78de4fe532a7a1bd"
+                "78de4fe532a7a1bd",
+                "7961799d126d1b31"
             ]
         ]
     },
@@ -118,6 +161,220 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "295b8eca5eb373be",
+        "type": "function",
+        "z": "faaa4f54ed7597d7",
+        "g": "3808b3b0abf131f7",
+        "name": "function 103",
+        "func": "\nmsg.topic = \"INSERT INTO `local_data` (`data`) VALUES ('\"+ msg.payload + \"');\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 770,
+        "y": 460,
+        "wires": [
+            [
+                "91b59430532c1fb5",
+                "118a58728bddf7e3"
+            ]
+        ]
+    },
+    {
+        "id": "91b59430532c1fb5",
+        "type": "mysql",
+        "z": "faaa4f54ed7597d7",
+        "g": "3808b3b0abf131f7",
+        "mydb": "45598baf2af77f76",
+        "name": "",
+        "x": 920,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cbaa07d685e2a818",
+        "type": "json",
+        "z": "faaa4f54ed7597d7",
+        "g": "3808b3b0abf131f7",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 610,
+        "y": 460,
+        "wires": [
+            [
+                "295b8eca5eb373be"
+            ]
+        ]
+    },
+    {
+        "id": "118a58728bddf7e3",
+        "type": "debug",
+        "z": "faaa4f54ed7597d7",
+        "g": "3808b3b0abf131f7",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "topic",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "5aab794bde737cdc",
+        "type": "link in",
+        "z": "faaa4f54ed7597d7",
+        "g": "3808b3b0abf131f7",
+        "name": "",
+        "links": [
+            "6a0d6344d5559850",
+            "1d325151593e5d32",
+            "7961799d126d1b31"
+        ],
+        "x": 105,
+        "y": 460,
+        "wires": [
+            [
+                "d39941b5f2d46475"
+            ]
+        ]
+    },
+    {
+        "id": "43c8846d1ce04c26",
+        "type": "debug",
+        "z": "faaa4f54ed7597d7",
+        "g": "3808b3b0abf131f7",
+        "name": "debug 123",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "d39941b5f2d46475",
+        "type": "function",
+        "z": "faaa4f54ed7597d7",
+        "g": "3808b3b0abf131f7",
+        "name": "Filter local data",
+        "func": "let out_data = {}\n\nout_data.timestamp = msg.payload.timestamp;\nout_data.latitude = msg.payload.data.gps.latidute;\nout_data.longitude = msg.payload.data.gps.longitude;\nout_data.velocidad = msg.payload.data.gps.speed;\nout_data.carga\nout_data.bateria\nout_data.estado\nmsg.payload = out_data;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 460,
+        "wires": [
+            [
+                "43c8846d1ce04c26"
+            ]
+        ]
+    },
+    {
+        "id": "e0d359a9a7bf3392",
+        "type": "comment",
+        "z": "faaa4f54ed7597d7",
+        "g": "3808b3b0abf131f7",
+        "name": "CORREGIR EL FILTER Y POR AHORA NO HABRA DATA LOCAL",
+        "info": "",
+        "x": 420,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "3f555f6973d84794",
+        "type": "inject",
+        "z": "faaa4f54ed7597d7",
+        "g": "686d9ccfaccf762f",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 660,
+        "wires": [
+            [
+                "cd4456431ea37fa3"
+            ]
+        ]
+    },
+    {
+        "id": "cd4456431ea37fa3",
+        "type": "function",
+        "z": "faaa4f54ed7597d7",
+        "g": "686d9ccfaccf762f",
+        "name": "DELETE ALL",
+        "func": "\nmsg.topic = `\n  DELETE FROM local_data;\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 660,
+        "wires": [
+            [
+                "cfe38dfce77990e9"
+            ]
+        ]
+    },
+    {
+        "id": "cfe38dfce77990e9",
+        "type": "mysql",
+        "z": "faaa4f54ed7597d7",
+        "g": "686d9ccfaccf762f",
+        "mydb": "45598baf2af77f76",
+        "name": "",
+        "x": 560,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7961799d126d1b31",
+        "type": "link out",
+        "z": "faaa4f54ed7597d7",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "5aab794bde737cdc"
+        ],
+        "x": 355,
+        "y": 200,
+        "wires": []
     },
     {
         "id": "1afd5cec81f07905",
