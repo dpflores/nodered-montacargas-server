@@ -273,7 +273,7 @@
         "z": "f3559f90766b0184",
         "name": "",
         "url": "/status-loc",
-        "method": "post",
+        "method": "get",
         "upload": false,
         "swaggerDoc": "",
         "x": 200,
