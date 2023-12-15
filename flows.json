@@ -305,7 +305,7 @@
         "z": "f3559f90766b0184",
         "name": "",
         "url": "/load",
-        "method": "post",
+        "method": "get",
         "upload": false,
         "swaggerDoc": "",
         "x": 180,
@@ -432,5 +432,21 @@
                 "de158e254d0e9e0f"
             ]
         ]
+    },
+    {
+        "id": "e1a4cf02b81fcc16",
+        "type": "debug",
+        "z": "f3559f90766b0184",
+        "name": "debug 167",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 500,
+        "wires": []
     }
 ]
