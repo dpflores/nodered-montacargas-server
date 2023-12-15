@@ -8,6 +8,14 @@
         "env": []
     },
     {
+        "id": "f3559f90766b0184",
+        "type": "tab",
+        "label": "CHARTS",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "cdf672981e934209",
         "type": "mqtt-broker",
         "name": "",
@@ -51,8 +59,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 180,
-        "y": 180,
+        "x": 120,
+        "y": 140,
         "wires": [
             [
                 "a515eb7fd1cbdb66"
@@ -71,8 +79,33 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 400,
+        "x": 500,
         "y": 180,
         "wires": []
+    },
+    {
+        "id": "78de4fe532a7a1bd",
+        "type": "change",
+        "z": "faaa4f54ed7597d7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "gateway_data",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 140,
+        "wires": [
+            []
+        ]
     }
 ]
