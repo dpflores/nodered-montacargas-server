@@ -288,7 +288,7 @@
         "z": "f3559f90766b0184",
         "name": "",
         "url": "/speed",
-        "method": "post",
+        "method": "get",
         "upload": false,
         "swaggerDoc": "",
         "x": 190,
