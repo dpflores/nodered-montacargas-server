@@ -47,6 +47,16 @@
         "sessionExpiry": ""
     },
     {
+        "id": "45598baf2af77f76",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "localhost",
+        "port": "3306",
+        "db": "acme_db",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
         "id": "1de59b82acd33bdc",
         "type": "mqtt in",
         "z": "faaa4f54ed7597d7",
@@ -108,5 +118,232 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "1afd5cec81f07905",
+        "type": "function",
+        "z": "f3559f90766b0184",
+        "name": "",
+        "func": "var dates = msg.payload.dateRange;\nmsg.topic = `SELECT * FROM local_data WHERE \ndate >= FROM_UNIXTIME(${dates[0]}) AND date <= FROM_UNIXTIME(${dates[1]});\n`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 120,
+        "wires": [
+            [
+                "6e54ef6d06aa9daa"
+            ]
+        ]
+    },
+    {
+        "id": "0691751ad43d6e19",
+        "type": "http in",
+        "z": "f3559f90766b0184",
+        "name": "",
+        "url": "/bell1",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 120,
+        "wires": [
+            [
+                "1afd5cec81f07905"
+            ]
+        ]
+    },
+    {
+        "id": "74c5e538fffdd527",
+        "type": "http response",
+        "z": "f3559f90766b0184",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1120,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "6e54ef6d06aa9daa",
+        "type": "mysql",
+        "z": "f3559f90766b0184",
+        "mydb": "45598baf2af77f76",
+        "name": "",
+        "x": 540,
+        "y": 120,
+        "wires": [
+            [
+                "ca7d08bcc5d1b252"
+            ]
+        ]
+    },
+    {
+        "id": "ca7d08bcc5d1b252",
+        "type": "function",
+        "z": "f3559f90766b0184",
+        "name": "Process to json array",
+        "func": "var array_in = msg.payload;\nvar array_out = [];\n\nfor (var i = 0; i < array_in.length; i++) {\n    \n    array_out[i] = JSON.parse(msg.payload[i].data);\n}\n\nmsg.payload = array_out;\n\nmsg.columns = Object.keys(msg.payload[0]).toString();\n\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 740,
+        "y": 120,
+        "wires": [
+            [
+                "bacbbce613cf7a97",
+                "4b4c206763080349"
+            ]
+        ]
+    },
+    {
+        "id": "71e641b3de3dd236",
+        "type": "debug",
+        "z": "f3559f90766b0184",
+        "name": "debug 164",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1150,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "bacbbce613cf7a97",
+        "type": "function",
+        "z": "f3559f90766b0184",
+        "name": "to carga1",
+        "func": "var array_in = msg.payload;\nvar array_out = [];\n\nfor (var i = 0; i < array_in.length; i++) {\n    \n    array_out[i] = array_in[i].carga1;\n}\n\nmsg.payload = array_out;\n\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 120,
+        "wires": [
+            [
+                "71e641b3de3dd236",
+                "74c5e538fffdd527"
+            ]
+        ]
+    },
+    {
+        "id": "4b4c206763080349",
+        "type": "debug",
+        "z": "f3559f90766b0184",
+        "name": "debug 165",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 970,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "4d4295502b9089fd",
+        "type": "http in",
+        "z": "f3559f90766b0184",
+        "name": "",
+        "url": "/status-loc",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 200,
+        "y": 340,
+        "wires": [
+            [
+                "d107c11a308aefca"
+            ]
+        ]
+    },
+    {
+        "id": "ee84a2afe42589e3",
+        "type": "http in",
+        "z": "f3559f90766b0184",
+        "name": "",
+        "url": "/speed",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2f2d9f304f7176ee",
+        "type": "http in",
+        "z": "f3559f90766b0184",
+        "name": "",
+        "url": "/load",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 180,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d107c11a308aefca",
+        "type": "change",
+        "z": "f3559f90766b0184",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "gateway_data.gps.speed",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 340,
+        "wires": [
+            [
+                "1bb24772073ebcbc"
+            ]
+        ]
+    },
+    {
+        "id": "1bb24772073ebcbc",
+        "type": "http response",
+        "z": "f3559f90766b0184",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 700,
+        "y": 340,
+        "wires": []
     }
 ]
