@@ -448,5 +448,23 @@
         "x": 770,
         "y": 500,
         "wires": []
+    },
+    {
+        "id": "58d05188537d097c",
+        "type": "function",
+        "z": "f3559f90766b0184",
+        "name": "pressure to load",
+        "func": "var data_json = global.get(\"gateway_data\");\n\nmsg.payload = [data_json.data.gps.latitude, data_json.data.gps.longitude];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 340,
+        "wires": [
+            []
+        ]
     }
 ]
