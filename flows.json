@@ -896,7 +896,7 @@
         "type": "function",
         "z": "f3559f90766b0184",
         "name": "to realtime",
-        "func": "var array_in = msg.payload;\nvar array_out1 = [];\nvar array_out2 = [];\n\n\nfor (var i = 0; i < array_in.length; i++) {\n    \n    array_out1[i] = [array_in[i].timestamp, array_in[i].z1_axis];\n    array_out2[i] = [array_in[i].timestamp, array_in[i].z2_axis];\n    \n}\n\nmsg.payload = {\"array1\": array_out1,\n                \"array2\": array_out2};\n\n\nreturn msg;\n",
+        "func": "var array_in = msg.payload;\nvar array_out1 = [];\nvar array_out2 = [];\n\n\nfor (var i = 0; i < array_in.length; i++) {\n    \n    array_out1[i] = [array_in[i].timestamp, array_in[i].carga];\n    array_out2[i] = [array_in[i].timestamp, array_in[i].bateria];\n    \n}\n\nmsg.payload = {\"array1\": array_out1,\n                \"array2\": array_out2};\n\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
