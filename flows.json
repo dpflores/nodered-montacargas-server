@@ -115,7 +115,6 @@
         "y": 100,
         "wires": [
             [
-                "a515eb7fd1cbdb66",
                 "78de4fe532a7a1bd",
                 "7961799d126d1b31"
             ]
@@ -126,15 +125,15 @@
         "type": "debug",
         "z": "faaa4f54ed7597d7",
         "name": "debug 1",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 500,
-        "y": 180,
+        "x": 760,
+        "y": 160,
         "wires": []
     },
     {
@@ -159,7 +158,10 @@
         "x": 430,
         "y": 100,
         "wires": [
-            []
+            [
+                "a515eb7fd1cbdb66",
+                "6aaedab152bbc411"
+            ]
         ]
     },
     {
@@ -395,34 +397,25 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 880,
+        "x": 1000,
         "y": 100,
         "wires": [
             []
         ]
     },
     {
-        "id": "fb75dbebeb63f3aa",
-        "type": "inject",
+        "id": "6aaedab152bbc411",
+        "type": "function",
         "z": "faaa4f54ed7597d7",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 680,
+        "name": "function 104",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
         "y": 100,
         "wires": [
             [
