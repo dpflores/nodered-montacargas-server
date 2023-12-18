@@ -2,7 +2,9 @@
     "name": "nodered-montacargas-server",
     "description": "Sistema que se comunica con el dashboard del montacargas",
     "version": "0.0.1",
-    "dependencies": {},
+    "dependencies": {
+        "node-red-node-mysql": "1.0.3"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flows.json",
