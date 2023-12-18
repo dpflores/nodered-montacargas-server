@@ -393,7 +393,7 @@
         "type": "function",
         "z": "faaa4f54ed7597d7",
         "name": "filtering",
-        "func": "var data_json = msg.payload;\n\ndata_json.battery/1000;\ndata_json.load = data_json.pressure/1000;\n\nmsg.payload = data_json;\nreturn msg;",
+        "func": "var data_json = msg.payload;\n\ndata_json.battery = data_json.battery/1000;\ndata_json.load = data_json.pressure/1000;\n\nmsg.payload = data_json;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
