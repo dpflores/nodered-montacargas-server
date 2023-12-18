@@ -115,26 +115,9 @@
         "y": 100,
         "wires": [
             [
-                "78de4fe532a7a1bd",
-                "7961799d126d1b31"
+                "78de4fe532a7a1bd"
             ]
         ]
-    },
-    {
-        "id": "a515eb7fd1cbdb66",
-        "type": "debug",
-        "z": "faaa4f54ed7597d7",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 760,
-        "y": 160,
-        "wires": []
     },
     {
         "id": "78de4fe532a7a1bd",
@@ -159,7 +142,6 @@
         "y": 100,
         "wires": [
             [
-                "a515eb7fd1cbdb66",
                 "6aaedab152bbc411"
             ]
         ]
@@ -258,11 +240,12 @@
         "z": "faaa4f54ed7597d7",
         "g": "3808b3b0abf131f7",
         "name": "debug 123",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 450,
@@ -374,8 +357,8 @@
         "links": [
             "5aab794bde737cdc"
         ],
-        "x": 355,
-        "y": 200,
+        "x": 1215,
+        "y": 180,
         "wires": []
     },
     {
@@ -400,28 +383,47 @@
         "x": 1000,
         "y": 100,
         "wires": [
-            []
+            [
+                "7961799d126d1b31"
+            ]
         ]
     },
     {
         "id": "6aaedab152bbc411",
         "type": "function",
         "z": "faaa4f54ed7597d7",
-        "name": "function 104",
-        "func": "\nreturn msg;",
+        "name": "filtering",
+        "func": "var data_json = msg.payload;\n\ndata_json.battery/1000;\ndata_json.load = data_json.pressure/1000;\n\nmsg.payload = data_json;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
+        "x": 700,
         "y": 100,
         "wires": [
             [
-                "252f650c7464a3f8"
+                "252f650c7464a3f8",
+                "a515eb7fd1cbdb66"
             ]
         ]
+    },
+    {
+        "id": "a515eb7fd1cbdb66",
+        "type": "debug",
+        "z": "faaa4f54ed7597d7",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 200,
+        "wires": []
     },
     {
         "id": "1afd5cec81f07905",
