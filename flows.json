@@ -396,7 +396,7 @@
         "type": "function",
         "z": "faaa4f54ed7597d7",
         "name": "filtering",
-        "func": "var data_json = msg.payload;\n\ndata_json.data.battery = data_json.data.battery.voltage/1000;\ndata_json.data.load = data_json.data.pressure.current/1000;\ndata_json.data.pressure_bar = data_json.data.pressure.current*250/20000;\ndata_json.data.pressure_psi = data_json.data.pressure.current*3625/20000;\n\nmsg.payload = data_json;\nreturn msg;",
+        "func": "var data_json = msg.payload;\n\ndata_json.data.battery = data_json.data.battery.voltage/1000;\ndata_json.data.load = data_json.data.pressure.current/1000;\ndata_json.data.pressure_bar = (data_json.data.pressure.current-4000)*250/16000;\ndata_json.data.pressure_psi = (data_json.data.pressure.current-4000)*3625/16000;\n\nmsg.payload = data_json;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
