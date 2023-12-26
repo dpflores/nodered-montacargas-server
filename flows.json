@@ -480,7 +480,7 @@
         "type": "function",
         "z": "faaa4f54ed7597d7",
         "g": "3808b3b0abf131f7",
-        "name": "filtering",
+        "name": "get global",
         "func": "var data_json = global.get(\"filtered_data\");\nmsg.payload = data_json;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
@@ -663,7 +663,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "1",
+        "repeat": "2",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
@@ -674,7 +674,7 @@
         "y": 160,
         "wires": [
             [
-                "32951cc131fe539c"
+                "e3485daee7bb9934"
             ]
         ]
     },
@@ -688,16 +688,28 @@
         "rules": [
             {
                 "t": "eq",
-                "v": "",
+                "v": "connected",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "disconnected",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "shutdown",
                 "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 1,
-        "x": 450,
+        "outputs": 3,
+        "x": 530,
         "y": 160,
         "wires": [
+            [],
+            [],
             []
         ]
     },
@@ -723,6 +735,43 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "e3485daee7bb9934",
+        "type": "function",
+        "z": "dd314c22813d11fc",
+        "name": "get global",
+        "func": "var data_json = global.get(\"connection\");\nmsg.payload = data_json;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 160,
+        "wires": [
+            [
+                "32951cc131fe539c",
+                "9c851e90e2759480"
+            ]
+        ]
+    },
+    {
+        "id": "9c851e90e2759480",
+        "type": "debug",
+        "z": "dd314c22813d11fc",
+        "name": "debug 179",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 80,
+        "wires": []
     },
     {
         "id": "4d4295502b9089fd",
