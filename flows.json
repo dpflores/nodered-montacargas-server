@@ -385,7 +385,7 @@
         "type": "debug",
         "z": "faaa4f54ed7597d7",
         "name": "debug 1",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -470,7 +470,7 @@
         "z": "faaa4f54ed7597d7",
         "g": "3808b3b0abf131f7",
         "name": "debug 176",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -522,6 +522,60 @@
         "x": 550,
         "y": 220,
         "wires": []
+    },
+    {
+        "id": "940186cba458fc3d",
+        "type": "inject",
+        "z": "faaa4f54ed7597d7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 460,
+        "y": 40,
+        "wires": [
+            [
+                "9f3ac2bcace26dcd"
+            ]
+        ]
+    },
+    {
+        "id": "9f3ac2bcace26dcd",
+        "type": "change",
+        "z": "faaa4f54ed7597d7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filtered_data",
+                "pt": "global",
+                "to": "{\"gateway_key\":\"A13CHH\",\"timestamp\":1703624401476,\"data\":{\"gps\":{\"pos_valid\":0,\"latitude\":-12.0477003,\"longitude\":-77.100844,\"altitude\":84.782,\"haccuracy\":5.7,\"speed\":0,\"course\":26.45},\"mantto\":\"0\",\"running\":\"0\",\"hourmeter\":0,\"battery\":0,\"pressure\":{\"current\":0},\"load\":0,\"pressure_bar\":0,\"pressure_psi\":0}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 40,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "4d4295502b9089fd",
