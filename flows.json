@@ -434,7 +434,7 @@
         "type": "function",
         "z": "faaa4f54ed7597d7",
         "name": "filtering",
-        "func": "var data_json = msg.payload;\nvar data_json1 = {};\n\ndata_json1.battery = data_json.data.battery.voltage/1000;\ndata_json1.load = data_json.data.pressure.current/1000;\ndata_json1.pressure_bar = (data_json.data.pressure.current-4000)*250/16000;\ndata_json1.pressure_psi = (data_json.data.pressure.current-4000)*3625/16000;\ndata_json1.latitude = data_json.data.gps.latitude;\ndata_json1.longitude = data_json.data.gps.longitude;\n\ndata_json1.altitude = data_json.data.gps.altitude;\ndata_json1.speed = data_json.data.gps.speed;\n\nmsg.payload = data_json1;\nreturn msg;",
+        "func": "var data_json = msg.payload;\nvar data_json1 = {};\n\ndata_json1.battery = data_json.data.battery.voltage/1000;\ndata_json1.load = data_json.data.pressure.current/1000;\ndata_json1.pressure_bar = (data_json.data.pressure.current-4000)*250/16000;\ndata_json1.pressure_psi = (data_json.data.pressure.current-4000)*3625/16000;\ndata_json1.latitude = data_json.data.gps.latitude;\ndata_json1.longitude = data_json.data.gps.longitude;\ndata_json1.mantto = data_json.data.mantto;\ndata_json1.altitude = data_json.data.gps.altitude;\ndata_json1.speed = data_json.data.gps.speed;\n\nmsg.payload = data_json1;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -761,9 +761,7 @@
                 "d088bd5a2d45dc05"
             ],
             [],
-            [
-                "f6dc9013c530e183"
-            ]
+            []
         ]
     },
     {
@@ -830,7 +828,7 @@
         "id": "d088bd5a2d45dc05",
         "type": "change",
         "z": "dd314c22813d11fc",
-        "name": "",
+        "name": "0 - Apagado",
         "rules": [
             {
                 "t": "set",
@@ -845,33 +843,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 740,
+        "x": 690,
         "y": 180,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f6dc9013c530e183",
-        "type": "change",
-        "z": "dd314c22813d11fc",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "filtered_data.status",
-                "pt": "global",
-                "to": "1",
-                "tot": "num"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 760,
-        "y": 220,
         "wires": [
             []
         ]
