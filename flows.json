@@ -754,7 +754,9 @@
                 "d088bd5a2d45dc05"
             ],
             [],
-            []
+            [
+                "f6dc9013c530e183"
+            ]
         ]
     },
     {
@@ -838,6 +840,31 @@
         "reg": false,
         "x": 740,
         "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f6dc9013c530e183",
+        "type": "change",
+        "z": "dd314c22813d11fc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filtered_data.status",
+                "pt": "global",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 220,
         "wires": [
             []
         ]
