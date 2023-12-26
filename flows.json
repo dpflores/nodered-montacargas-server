@@ -197,7 +197,8 @@
         "wires": [
             [
                 "39bec495e61bf8d8",
-                "105cbee75b813812"
+                "105cbee75b813812",
+                "6d14a03a6790bbb7"
             ]
         ]
     },
@@ -553,6 +554,43 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "6d14a03a6790bbb7",
+        "type": "timeout",
+        "z": "faaa4f54ed7597d7",
+        "name": "My Timeout",
+        "outtopic": "",
+        "outsafe": "Safe",
+        "outwarning": "Warning",
+        "outunsafe": "Unsafe",
+        "warning": "10",
+        "timer": "30",
+        "repeat": false,
+        "again": false,
+        "x": 310,
+        "y": 40,
+        "wires": [
+            [
+                "4f9d2a60e14dab41"
+            ]
+        ]
+    },
+    {
+        "id": "4f9d2a60e14dab41",
+        "type": "debug",
+        "z": "faaa4f54ed7597d7",
+        "name": "debug 178",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 40,
+        "wires": []
     },
     {
         "id": "c48ac26aed2c26b5",
