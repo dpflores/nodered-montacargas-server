@@ -581,7 +581,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "filtered_data.data.gps.speed",
+                "to": "filtered_data.speed",
                 "tot": "global"
             }
         ],
@@ -638,7 +638,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "filtered_data.data.load",
+                "to": "filtered_data.load",
                 "tot": "global"
             }
         ],
@@ -690,7 +690,7 @@
         "type": "function",
         "z": "f3559f90766b0184",
         "name": "coordinates",
-        "func": "var data_json = global.get(\"filtered_data\");\n\nmsg.payload = [data_json.data.gps.latitude, data_json.data.gps.longitude];\nreturn msg;",
+        "func": "var data_json = global.get(\"filtered_data\");\n\nmsg.payload = [data_json.latitude, data_json.longitude];\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
