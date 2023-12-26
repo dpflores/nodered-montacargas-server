@@ -559,7 +559,7 @@
         "id": "6d14a03a6790bbb7",
         "type": "timeout",
         "z": "faaa4f54ed7597d7",
-        "name": "My Timeout",
+        "name": "Connection Timeout",
         "outtopic": "",
         "outsafe": "Safe",
         "outwarning": "Warning",
@@ -568,7 +568,7 @@
         "timer": "30",
         "repeat": false,
         "again": false,
-        "x": 310,
+        "x": 340,
         "y": 40,
         "wires": [
             [
@@ -588,7 +588,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 490,
+        "x": 610,
         "y": 40,
         "wires": []
     },
