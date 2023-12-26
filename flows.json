@@ -1,5 +1,13 @@
 [
     {
+        "id": "28df018e4ea7c83e",
+        "type": "tab",
+        "label": "DEVICE INIT",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "faaa4f54ed7597d7",
         "type": "tab",
         "label": "DATA IN",
@@ -36,8 +44,8 @@
             "37f00e3d3bd9c8d9",
             "437f7af07014ef8a"
         ],
-        "x": 114,
-        "y": 339,
+        "x": 74,
+        "y": 299,
         "w": 1092,
         "h": 222
     },
@@ -101,6 +109,60 @@
         "charset": "UTF8"
     },
     {
+        "id": "940186cba458fc3d",
+        "type": "inject",
+        "z": "28df018e4ea7c83e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 80,
+        "wires": [
+            [
+                "9f3ac2bcace26dcd"
+            ]
+        ]
+    },
+    {
+        "id": "9f3ac2bcace26dcd",
+        "type": "change",
+        "z": "28df018e4ea7c83e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filtered_data",
+                "pt": "global",
+                "to": "{\"gateway_key\":\"A13CHH\",\"timestamp\":1703624401476,\"data\":{\"gps\":{\"pos_valid\":0,\"latitude\":-12.0477003,\"longitude\":-77.100844,\"altitude\":84.782,\"haccuracy\":5.7,\"speed\":0,\"course\":26.45},\"mantto\":\"0\",\"running\":\"0\",\"hourmeter\":0,\"battery\":0,\"pressure\":{\"current\":0},\"load\":0,\"pressure_bar\":0,\"pressure_psi\":0}}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "1de59b82acd33bdc",
         "type": "mqtt in",
         "z": "faaa4f54ed7597d7",
@@ -117,35 +179,7 @@
         "y": 100,
         "wires": [
             [
-                "ab104395c0ed5919",
                 "39bec495e61bf8d8"
-            ]
-        ]
-    },
-    {
-        "id": "78de4fe532a7a1bd",
-        "type": "change",
-        "z": "faaa4f54ed7597d7",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "gateway_data",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 550,
-        "y": 100,
-        "wires": [
-            [
-                "6aaedab152bbc411"
             ]
         ]
     },
@@ -162,8 +196,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 910,
-        "y": 460,
+        "x": 870,
+        "y": 420,
         "wires": [
             [
                 "118a58728bddf7e3",
@@ -178,8 +212,8 @@
         "g": "3808b3b0abf131f7",
         "mydb": "900cbd7c7392856c",
         "name": "",
-        "x": 1120,
-        "y": 460,
+        "x": 1080,
+        "y": 420,
         "wires": [
             []
         ]
@@ -193,8 +227,8 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 750,
-        "y": 460,
+        "x": 710,
+        "y": 420,
         "wires": [
             [
                 "295b8eca5eb373be"
@@ -215,8 +249,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1060,
-        "y": 420,
+        "x": 1020,
+        "y": 380,
         "wires": []
     },
     {
@@ -233,8 +267,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 730,
-        "y": 400,
+        "x": 690,
+        "y": 360,
         "wires": []
     },
     {
@@ -250,8 +284,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 580,
-        "y": 460,
+        "x": 540,
+        "y": 420,
         "wires": [
             [
                 "43c8846d1ce04c26",
@@ -266,8 +300,8 @@
         "g": "3808b3b0abf131f7",
         "name": "CORREGIR EL FILTER Y POR AHORA NO HABRA DATA LOCAL",
         "info": "",
-        "x": 560,
-        "y": 520,
+        "x": 520,
+        "y": 480,
         "wires": []
     },
     {
@@ -353,7 +387,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1160,
+        "x": 740,
         "y": 100,
         "wires": [
             []
@@ -371,46 +405,13 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 860,
+        "x": 520,
         "y": 100,
         "wires": [
             [
-                "252f650c7464a3f8",
-                "a515eb7fd1cbdb66"
+                "252f650c7464a3f8"
             ]
         ]
-    },
-    {
-        "id": "a515eb7fd1cbdb66",
-        "type": "debug",
-        "z": "faaa4f54ed7597d7",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1140,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "ab104395c0ed5919",
-        "type": "debug",
-        "z": "faaa4f54ed7597d7",
-        "name": "debug 174",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 350,
-        "y": 220,
-        "wires": []
     },
     {
         "id": "e18d6e5d0350ae43",
@@ -425,8 +426,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
-        "y": 460,
+        "x": 340,
+        "y": 420,
         "wires": [
             [
                 "d39941b5f2d46475",
@@ -456,8 +457,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 230,
-        "y": 460,
+        "x": 190,
+        "y": 420,
         "wires": [
             [
                 "e18d6e5d0350ae43"
@@ -477,8 +478,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 510,
-        "y": 380,
+        "x": 470,
+        "y": 340,
         "wires": []
     },
     {
@@ -502,79 +503,8 @@
         "y": 100,
         "wires": [
             [
-                "78de4fe532a7a1bd",
-                "b24198675a07320e"
+                "6aaedab152bbc411"
             ]
-        ]
-    },
-    {
-        "id": "b24198675a07320e",
-        "type": "debug",
-        "z": "faaa4f54ed7597d7",
-        "name": "debug 177",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 550,
-        "y": 220,
-        "wires": []
-    },
-    {
-        "id": "940186cba458fc3d",
-        "type": "inject",
-        "z": "faaa4f54ed7597d7",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 470,
-        "y": 40,
-        "wires": [
-            [
-                "9f3ac2bcace26dcd"
-            ]
-        ]
-    },
-    {
-        "id": "9f3ac2bcace26dcd",
-        "type": "change",
-        "z": "faaa4f54ed7597d7",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "filtered_data",
-                "pt": "global",
-                "to": "{\"gateway_key\":\"A13CHH\",\"timestamp\":1703624401476,\"data\":{\"gps\":{\"pos_valid\":0,\"latitude\":-12.0477003,\"longitude\":-77.100844,\"altitude\":84.782,\"haccuracy\":5.7,\"speed\":0,\"course\":26.45},\"mantto\":\"0\",\"running\":\"0\",\"hourmeter\":0,\"battery\":0,\"pressure\":{\"current\":0},\"load\":0,\"pressure_bar\":0,\"pressure_psi\":0}}",
-                "tot": "json"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 660,
-        "y": 40,
-        "wires": [
-            []
         ]
     },
     {
