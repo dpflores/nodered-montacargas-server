@@ -44,8 +44,8 @@
             "37f00e3d3bd9c8d9",
             "437f7af07014ef8a"
         ],
-        "x": 74,
-        "y": 299,
+        "x": 54,
+        "y": 239,
         "w": 1092,
         "h": 222
     },
@@ -62,8 +62,8 @@
             "cd4456431ea37fa3",
             "cfe38dfce77990e9"
         ],
-        "x": 74,
-        "y": 619,
+        "x": 54,
+        "y": 519,
         "w": 572,
         "h": 82
     },
@@ -196,8 +196,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 870,
-        "y": 420,
+        "x": 850,
+        "y": 360,
         "wires": [
             [
                 "118a58728bddf7e3",
@@ -212,8 +212,8 @@
         "g": "3808b3b0abf131f7",
         "mydb": "900cbd7c7392856c",
         "name": "",
-        "x": 1080,
-        "y": 420,
+        "x": 1060,
+        "y": 360,
         "wires": [
             []
         ]
@@ -227,8 +227,8 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 710,
-        "y": 420,
+        "x": 690,
+        "y": 360,
         "wires": [
             [
                 "295b8eca5eb373be"
@@ -249,8 +249,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1020,
-        "y": 380,
+        "x": 1000,
+        "y": 320,
         "wires": []
     },
     {
@@ -267,8 +267,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 690,
-        "y": 360,
+        "x": 670,
+        "y": 300,
         "wires": []
     },
     {
@@ -284,8 +284,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 540,
-        "y": 420,
+        "x": 520,
+        "y": 360,
         "wires": [
             [
                 "43c8846d1ce04c26",
@@ -300,8 +300,8 @@
         "g": "3808b3b0abf131f7",
         "name": "CORREGIR EL FILTER Y POR AHORA NO HABRA DATA LOCAL",
         "info": "",
-        "x": 520,
-        "y": 480,
+        "x": 500,
+        "y": 420,
         "wires": []
     },
     {
@@ -326,8 +326,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 180,
-        "y": 660,
+        "x": 160,
+        "y": 560,
         "wires": [
             [
                 "cd4456431ea37fa3"
@@ -347,8 +347,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 390,
-        "y": 660,
+        "x": 370,
+        "y": 560,
         "wires": [
             [
                 "cfe38dfce77990e9"
@@ -362,8 +362,8 @@
         "g": "686d9ccfaccf762f",
         "mydb": "900cbd7c7392856c",
         "name": "",
-        "x": 560,
-        "y": 660,
+        "x": 540,
+        "y": 560,
         "wires": [
             []
         ]
@@ -426,8 +426,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 340,
-        "y": 420,
+        "x": 320,
+        "y": 360,
         "wires": [
             [
                 "d39941b5f2d46475",
@@ -457,8 +457,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 190,
-        "y": 420,
+        "x": 170,
+        "y": 360,
         "wires": [
             [
                 "e18d6e5d0350ae43"
@@ -478,8 +478,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 470,
-        "y": 340,
+        "x": 450,
+        "y": 280,
         "wires": []
     },
     {
@@ -634,7 +634,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 340,
+        "x": 380,
         "y": 340,
         "wires": [
             [
@@ -651,7 +651,7 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 560,
+        "x": 600,
         "y": 340,
         "wires": []
     },
@@ -720,6 +720,63 @@
         },
         "x": 580,
         "y": 140,
+        "wires": []
+    },
+    {
+        "id": "5bd16a39db3e67f2",
+        "type": "http in",
+        "z": "f3559f90766b0184",
+        "name": "",
+        "url": "/hourmeter",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 180,
+        "y": 440,
+        "wires": [
+            [
+                "87c06534bfb5c337"
+            ]
+        ]
+    },
+    {
+        "id": "87c06534bfb5c337",
+        "type": "change",
+        "z": "f3559f90766b0184",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"hours\":2, \"minutes\":20}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 440,
+        "wires": [
+            [
+                "345b33195005afcb"
+            ]
+        ]
+    },
+    {
+        "id": "345b33195005afcb",
+        "type": "http response",
+        "z": "f3559f90766b0184",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 580,
+        "y": 440,
         "wires": []
     }
 ]
