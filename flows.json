@@ -113,7 +113,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 140,
+        "x": 120,
         "y": 100,
         "wires": [
             [
@@ -485,7 +485,7 @@
         "id": "39bec495e61bf8d8",
         "type": "switch",
         "z": "faaa4f54ed7597d7",
-        "name": "",
+        "name": "Filter Gateway",
         "property": "payload.gateway_key",
         "propertyType": "msg",
         "rules": [
@@ -498,7 +498,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 310,
+        "x": 320,
         "y": 100,
         "wires": [
             [
