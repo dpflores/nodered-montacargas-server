@@ -117,8 +117,8 @@
         "y": 100,
         "wires": [
             [
-                "78de4fe532a7a1bd",
-                "ab104395c0ed5919"
+                "ab104395c0ed5919",
+                "39bec495e61bf8d8"
             ]
         ]
     },
@@ -141,7 +141,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 430,
+        "x": 510,
         "y": 100,
         "wires": [
             [
@@ -353,7 +353,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1000,
+        "x": 1160,
         "y": 100,
         "wires": [
             []
@@ -371,7 +371,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 700,
+        "x": 860,
         "y": 100,
         "wires": [
             [
@@ -392,7 +392,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 980,
+        "x": 1140,
         "y": 200,
         "wires": []
     },
@@ -408,8 +408,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 410,
-        "y": 160,
+        "x": 350,
+        "y": 220,
         "wires": []
     },
     {
@@ -482,152 +482,29 @@
         "wires": []
     },
     {
-        "id": "1afd5cec81f07905",
-        "type": "function",
-        "z": "f3559f90766b0184",
-        "d": true,
+        "id": "39bec495e61bf8d8",
+        "type": "switch",
+        "z": "faaa4f54ed7597d7",
         "name": "",
-        "func": "var dates = msg.payload.dateRange;\nmsg.topic = `SELECT * FROM local_data WHERE \ndate >= FROM_UNIXTIME(${dates[0]}) AND date <= FROM_UNIXTIME(${dates[1]});\n`;\n\nreturn msg;",
+        "property": "payload.gateway_key",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "A13CHH",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
         "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 400,
-        "y": 120,
+        "x": 310,
+        "y": 100,
         "wires": [
             [
-                "6e54ef6d06aa9daa"
+                "78de4fe532a7a1bd"
             ]
         ]
-    },
-    {
-        "id": "0691751ad43d6e19",
-        "type": "http in",
-        "z": "f3559f90766b0184",
-        "d": true,
-        "name": "",
-        "url": "/bell1",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 190,
-        "y": 120,
-        "wires": [
-            [
-                "1afd5cec81f07905"
-            ]
-        ]
-    },
-    {
-        "id": "74c5e538fffdd527",
-        "type": "http response",
-        "z": "f3559f90766b0184",
-        "d": true,
-        "name": "",
-        "statusCode": "200",
-        "headers": {
-            "content-type": "application/json"
-        },
-        "x": 1120,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "6e54ef6d06aa9daa",
-        "type": "mysql",
-        "z": "f3559f90766b0184",
-        "d": true,
-        "mydb": "",
-        "name": "",
-        "x": 540,
-        "y": 120,
-        "wires": [
-            [
-                "ca7d08bcc5d1b252"
-            ]
-        ]
-    },
-    {
-        "id": "ca7d08bcc5d1b252",
-        "type": "function",
-        "z": "f3559f90766b0184",
-        "d": true,
-        "name": "Process to json array",
-        "func": "var array_in = msg.payload;\nvar array_out = [];\n\nfor (var i = 0; i < array_in.length; i++) {\n    \n    array_out[i] = JSON.parse(msg.payload[i].data);\n}\n\nmsg.payload = array_out;\n\nmsg.columns = Object.keys(msg.payload[0]).toString();\n\n\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 740,
-        "y": 120,
-        "wires": [
-            [
-                "bacbbce613cf7a97",
-                "4b4c206763080349"
-            ]
-        ]
-    },
-    {
-        "id": "71e641b3de3dd236",
-        "type": "debug",
-        "z": "f3559f90766b0184",
-        "d": true,
-        "name": "debug 164",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1150,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "bacbbce613cf7a97",
-        "type": "function",
-        "z": "f3559f90766b0184",
-        "d": true,
-        "name": "to carga1",
-        "func": "var array_in = msg.payload;\nvar array_out = [];\n\nfor (var i = 0; i < array_in.length; i++) {\n    \n    array_out[i] = array_in[i].carga1;\n}\n\nmsg.payload = array_out;\n\n\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 960,
-        "y": 120,
-        "wires": [
-            [
-                "71e641b3de3dd236",
-                "74c5e538fffdd527"
-            ]
-        ]
-    },
-    {
-        "id": "4b4c206763080349",
-        "type": "debug",
-        "z": "f3559f90766b0184",
-        "d": true,
-        "name": "debug 165",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 970,
-        "y": 160,
-        "wires": []
     },
     {
         "id": "4d4295502b9089fd",
@@ -638,8 +515,8 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 200,
-        "y": 340,
+        "x": 180,
+        "y": 140,
         "wires": [
             [
                 "58d05188537d097c"
@@ -655,8 +532,8 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 190,
-        "y": 440,
+        "x": 170,
+        "y": 240,
         "wires": [
             [
                 "d107c11a308aefca"
@@ -672,8 +549,8 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 180,
-        "y": 540,
+        "x": 160,
+        "y": 340,
         "wires": [
             [
                 "1d176c38b3df1bd0"
@@ -699,8 +576,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 400,
-        "y": 440,
+        "x": 380,
+        "y": 240,
         "wires": [
             [
                 "1bb24772073ebcbc",
@@ -717,8 +594,8 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 620,
-        "y": 440,
+        "x": 600,
+        "y": 240,
         "wires": []
     },
     {
@@ -733,8 +610,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 670,
-        "y": 360,
+        "x": 650,
+        "y": 200,
         "wires": []
     },
     {
@@ -756,8 +633,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 360,
-        "y": 540,
+        "x": 340,
+        "y": 340,
         "wires": [
             [
                 "de158e254d0e9e0f"
@@ -773,8 +650,8 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 580,
-        "y": 540,
+        "x": 560,
+        "y": 340,
         "wires": []
     },
     {
@@ -790,8 +667,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 770,
-        "y": 500,
+        "x": 750,
+        "y": 300,
         "wires": []
     },
     {
@@ -806,8 +683,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 370,
-        "y": 340,
+        "x": 350,
+        "y": 140,
         "wires": [
             [
                 "a50b653253ed5f6a",
@@ -827,8 +704,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 570,
-        "y": 280,
+        "x": 550,
+        "y": 100,
         "wires": []
     },
     {
@@ -840,264 +717,8 @@
         "headers": {
             "content-type": "application/json"
         },
-        "x": 600,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "8e5a45f370b97cf7",
-        "type": "http in",
-        "z": "f3559f90766b0184",
-        "d": true,
-        "name": "",
-        "url": "/realtime",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 240,
-        "y": 780,
-        "wires": [
-            [
-                "7f9dcb7276b11522",
-                "5ec4052d7c7ae40a"
-            ]
-        ]
-    },
-    {
-        "id": "7d0aec952ef2821e",
-        "type": "http response",
-        "z": "f3559f90766b0184",
-        "d": true,
-        "name": "",
-        "statusCode": "200",
-        "headers": {
-            "content-type": "application/json"
-        },
-        "x": 1140,
-        "y": 780,
-        "wires": []
-    },
-    {
-        "id": "a756c9723aad153c",
-        "type": "debug",
-        "z": "f3559f90766b0184",
-        "d": true,
-        "name": "debug 170",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1110,
-        "y": 900,
-        "wires": []
-    },
-    {
-        "id": "7f9dcb7276b11522",
-        "type": "function",
-        "z": "f3559f90766b0184",
-        "d": true,
-        "name": "",
-        "func": "var dates = msg.payload.dateRange;\nmsg.topic = `SELECT * FROM local_data WHERE \ndate >= FROM_UNIXTIME(${dates[0]}) AND date <= FROM_UNIXTIME(${dates[1]});\n`;\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 420,
-        "y": 780,
-        "wires": [
-            [
-                "a839cc6139b9bbf4"
-            ]
-        ]
-    },
-    {
-        "id": "a839cc6139b9bbf4",
-        "type": "mysql",
-        "z": "f3559f90766b0184",
-        "d": true,
-        "mydb": "",
-        "name": "",
-        "x": 560,
-        "y": 780,
-        "wires": [
-            [
-                "b4dea4337bea69b9"
-            ]
-        ]
-    },
-    {
-        "id": "b4dea4337bea69b9",
-        "type": "function",
-        "z": "f3559f90766b0184",
-        "d": true,
-        "name": "Process to json array",
-        "func": "var array_in = msg.payload;\nvar array_out = [];\n\nfor (var i = 0; i < array_in.length; i++) {\n    \n    array_out[i] = JSON.parse(msg.payload[i].data);\n}\n\nmsg.payload = array_out;\n\nmsg.columns = Object.keys(msg.payload[0]).toString();\n\n\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 760,
-        "y": 780,
-        "wires": [
-            [
-                "c053737065a60245"
-            ]
-        ]
-    },
-    {
-        "id": "c053737065a60245",
-        "type": "function",
-        "z": "f3559f90766b0184",
-        "d": true,
-        "name": "to realtime",
-        "func": "var array_in = msg.payload;\nvar array_out1 = [];\nvar array_out2 = [];\n\n\nfor (var i = 0; i < array_in.length; i++) {\n    \n    array_out1[i] = [array_in[i].timestamp, array_in[i].carga];\n    array_out2[i] = [array_in[i].timestamp, array_in[i].bateria];\n    \n}\n\nmsg.payload = {\"array1\": array_out1,\n                \"array2\": array_out2};\n\n\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 970,
-        "y": 780,
-        "wires": [
-            [
-                "a756c9723aad153c",
-                "7d0aec952ef2821e"
-            ]
-        ]
-    },
-    {
-        "id": "9f86211d6ec8d31c",
-        "type": "http response",
-        "z": "f3559f90766b0184",
-        "d": true,
-        "name": "",
-        "statusCode": "200",
-        "headers": {
-            "content-type": "application/json"
-        },
-        "x": 1160,
-        "y": 1000,
-        "wires": []
-    },
-    {
-        "id": "f5f632d4ca77dfe2",
-        "type": "http in",
-        "z": "f3559f90766b0184",
-        "d": true,
-        "name": "",
-        "url": "/download",
-        "method": "post",
-        "upload": false,
-        "swaggerDoc": "",
-        "x": 240,
-        "y": 1000,
-        "wires": [
-            [
-                "1e7d463076214afa"
-            ]
-        ]
-    },
-    {
-        "id": "1e7d463076214afa",
-        "type": "function",
-        "z": "f3559f90766b0184",
-        "d": true,
-        "name": "Query ",
-        "func": "var dates = msg.payload.dateRange;\nmsg.topic = `SELECT * FROM local_data WHERE \ndate >= FROM_UNIXTIME(${dates[0]}) AND date <= FROM_UNIXTIME(${dates[1]});\n`;\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 410,
-        "y": 1000,
-        "wires": [
-            [
-                "fa8d37d77be06be4"
-            ]
-        ]
-    },
-    {
-        "id": "fa8d37d77be06be4",
-        "type": "mysql",
-        "z": "f3559f90766b0184",
-        "d": true,
-        "mydb": "",
-        "name": "",
-        "x": 600,
-        "y": 1000,
-        "wires": [
-            [
-                "7fad086e222baa58"
-            ]
-        ]
-    },
-    {
-        "id": "7fad086e222baa58",
-        "type": "function",
-        "z": "f3559f90766b0184",
-        "d": true,
-        "name": "Procesar array para csv",
-        "func": "var array_in = msg.payload;\nvar array_out = [];\n\n// All data\nfor (var i = 0; i < array_in.length; i++) {\n    array_out[i] = JSON.parse(msg.payload[i].data);\n\n    // Converting simple timestamp to human readable\n    // time\n    array_out[i].timestamp = unixTimestampToHumanReadable(array_out[i].timestamp);\n}\nmsg.filename = `${array_out[0].timestamp.split(\" \")[0]} hasta ${array_out[array_out.length - 1].timestamp.split(\" \")[0]}`;\n\nmsg.payload = array_out;\n\nmsg.columns = Object.keys(msg.payload[0]).toString();\n\n\nreturn msg;\n\n\n\n// Function for timestamp to readable time\nfunction unixTimestampToHumanReadable(unixTimestamp) {\n    const date = new Date(unixTimestamp);\n    const year = date.getFullYear();\n    const month = (date.getMonth() + 1).toString().padStart(2, '0');\n    const day = date.getDate().toString().padStart(2, '0');\n    const hours = date.getHours().toString().padStart(2, '0');\n    const minutes = date.getMinutes().toString().padStart(2, '0');\n    const seconds = date.getSeconds().toString().padStart(2, '0');\n\n    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;\n}\n",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 810,
-        "y": 1000,
-        "wires": [
-            [
-                "b92fe70f56479329"
-            ]
-        ]
-    },
-    {
-        "id": "b92fe70f56479329",
-        "type": "function",
-        "z": "f3559f90766b0184",
-        "d": true,
-        "name": "csv",
-        "func": "function arrayToCSV(data) {\n    // Verificar si el array de datos está vacío\n    if (data.length === 0) {\n        return '';\n    }\n\n    // Obtener las claves del primer objeto JSON para los encabezados de columna\n    const keys = Object.keys(data[0]);\n\n    // Construir los encabezados de columna\n    const headerRow = keys.join(',');\n\n    // Construir filas del CSV\n    const csvRows = [];\n    csvRows.push(headerRow);\n\n    for (const obj of data) {\n        const values = keys.map(key => obj[key]);\n        const csvRow = values.join(',');\n        csvRows.push(csvRow);\n    }\n\n    // Unir todas las filas con saltos de línea\n    return csvRows.join('\\n');\n}\n// Convertir el array de objetos JSON a una cadena CSV\nconst csvString = arrayToCSV(msg.payload);\nmsg.payload = {\"data\": csvString};\nmsg.descarga = 1;\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 990,
-        "y": 1000,
-        "wires": [
-            [
-                "9f86211d6ec8d31c"
-            ]
-        ]
-    },
-    {
-        "id": "5ec4052d7c7ae40a",
-        "type": "debug",
-        "z": "f3559f90766b0184",
-        "d": true,
-        "name": "debug 173",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 430,
-        "y": 720,
+        "x": 580,
+        "y": 140,
         "wires": []
     }
 ]
