@@ -711,7 +711,7 @@
         "type": "debug",
         "z": "f3559f90766b0184",
         "name": "debug 168",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
