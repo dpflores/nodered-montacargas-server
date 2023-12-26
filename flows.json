@@ -16,17 +16,17 @@
         "env": []
     },
     {
-        "id": "f3559f90766b0184",
+        "id": "dd314c22813d11fc",
         "type": "tab",
-        "label": "CHARTS",
+        "label": "SYSTEM STATUS",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "dd314c22813d11fc",
+        "id": "f3559f90766b0184",
         "type": "tab",
-        "label": "SYSTEM STATUS",
+        "label": "HTTP",
         "disabled": false,
         "info": "",
         "env": []
@@ -47,15 +47,14 @@
             "118a58728bddf7e3",
             "43c8846d1ce04c26",
             "d39941b5f2d46475",
-            "e0d359a9a7bf3392",
             "e18d6e5d0350ae43",
             "37f00e3d3bd9c8d9",
             "437f7af07014ef8a"
         ],
         "x": 54,
-        "y": 239,
+        "y": 259,
         "w": 1092,
-        "h": 222
+        "h": 162
     },
     {
         "id": "686d9ccfaccf762f",
@@ -205,7 +204,7 @@
         "finalize": "",
         "libs": [],
         "x": 850,
-        "y": 360,
+        "y": 380,
         "wires": [
             [
                 "118a58728bddf7e3",
@@ -221,7 +220,7 @@
         "mydb": "900cbd7c7392856c",
         "name": "",
         "x": 1060,
-        "y": 360,
+        "y": 380,
         "wires": [
             []
         ]
@@ -236,7 +235,7 @@
         "action": "",
         "pretty": false,
         "x": 690,
-        "y": 360,
+        "y": 380,
         "wires": [
             [
                 "295b8eca5eb373be"
@@ -258,7 +257,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1000,
-        "y": 320,
+        "y": 340,
         "wires": []
     },
     {
@@ -276,7 +275,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 670,
-        "y": 300,
+        "y": 320,
         "wires": []
     },
     {
@@ -293,24 +292,13 @@
         "finalize": "",
         "libs": [],
         "x": 520,
-        "y": 360,
+        "y": 380,
         "wires": [
             [
                 "43c8846d1ce04c26",
                 "cbaa07d685e2a818"
             ]
         ]
-    },
-    {
-        "id": "e0d359a9a7bf3392",
-        "type": "comment",
-        "z": "faaa4f54ed7597d7",
-        "g": "3808b3b0abf131f7",
-        "name": "CORREGIR EL FILTER Y POR AHORA NO HABRA DATA LOCAL",
-        "info": "",
-        "x": 500,
-        "y": 420,
-        "wires": []
     },
     {
         "id": "3f555f6973d84794",
@@ -434,8 +422,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
-        "y": 360,
+        "x": 340,
+        "y": 380,
         "wires": [
             [
                 "d39941b5f2d46475",
@@ -466,7 +454,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 170,
-        "y": 360,
+        "y": 380,
         "wires": [
             [
                 "e18d6e5d0350ae43"
@@ -487,7 +475,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 450,
-        "y": 280,
+        "y": 300,
         "wires": []
     },
     {
