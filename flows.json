@@ -573,7 +573,7 @@
         "timer": "120",
         "repeat": false,
         "again": false,
-        "x": 340,
+        "x": 320,
         "y": 40,
         "wires": [
             [
