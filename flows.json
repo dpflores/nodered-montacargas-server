@@ -420,7 +420,7 @@
         "z": "faaa4f54ed7597d7",
         "g": "3808b3b0abf131f7",
         "name": "filtering",
-        "func": "var data_json = global.get(\"filtered_data\");\nmsg.payload = data_json;",
+        "func": "var data_json = global.get(\"filtered_data\");\nmsg.payload = data_json;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
