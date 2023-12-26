@@ -29,14 +29,15 @@
             "91b59430532c1fb5",
             "cbaa07d685e2a818",
             "118a58728bddf7e3",
-            "5aab794bde737cdc",
             "43c8846d1ce04c26",
             "d39941b5f2d46475",
-            "e0d359a9a7bf3392"
+            "e0d359a9a7bf3392",
+            "e18d6e5d0350ae43",
+            "37f00e3d3bd9c8d9"
         ],
-        "x": 64,
+        "x": 114,
         "y": 359,
-        "w": 962,
+        "w": 1052,
         "h": 202
     },
     {
@@ -160,7 +161,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 770,
+        "x": 910,
         "y": 460,
         "wires": [
             [
@@ -176,7 +177,7 @@
         "g": "3808b3b0abf131f7",
         "mydb": "45598baf2af77f76",
         "name": "",
-        "x": 920,
+        "x": 1060,
         "y": 460,
         "wires": [
             []
@@ -191,7 +192,7 @@
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 610,
+        "x": 750,
         "y": 460,
         "wires": [
             [
@@ -213,26 +214,9 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 920,
+        "x": 1060,
         "y": 420,
         "wires": []
-    },
-    {
-        "id": "5aab794bde737cdc",
-        "type": "link in",
-        "z": "faaa4f54ed7597d7",
-        "g": "3808b3b0abf131f7",
-        "name": "",
-        "links": [
-            "7961799d126d1b31"
-        ],
-        "x": 105,
-        "y": 460,
-        "wires": [
-            [
-                "d39941b5f2d46475"
-            ]
-        ]
     },
     {
         "id": "43c8846d1ce04c26",
@@ -248,7 +232,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 450,
+        "x": 730,
         "y": 400,
         "wires": []
     },
@@ -265,7 +249,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 260,
+        "x": 580,
         "y": 460,
         "wires": [
             [
@@ -281,7 +265,7 @@
         "g": "3808b3b0abf131f7",
         "name": "CORREGIR EL FILTER Y POR AHORA NO HABRA DATA LOCAL",
         "info": "",
-        "x": 420,
+        "x": 560,
         "y": 520,
         "wires": []
     },
@@ -441,6 +425,57 @@
         "x": 410,
         "y": 160,
         "wires": []
+    },
+    {
+        "id": "e18d6e5d0350ae43",
+        "type": "function",
+        "z": "faaa4f54ed7597d7",
+        "g": "3808b3b0abf131f7",
+        "name": "filtering",
+        "func": "var data_json = global.get(\"filtered_data\");\nmsg.payload = data_json;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 460,
+        "wires": [
+            [
+                "d39941b5f2d46475"
+            ]
+        ]
+    },
+    {
+        "id": "37f00e3d3bd9c8d9",
+        "type": "inject",
+        "z": "faaa4f54ed7597d7",
+        "g": "3808b3b0abf131f7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 460,
+        "wires": [
+            [
+                "e18d6e5d0350ae43"
+            ]
+        ]
     },
     {
         "id": "1afd5cec81f07905",
