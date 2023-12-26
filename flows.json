@@ -104,7 +104,7 @@
         "z": "faaa4f54ed7597d7",
         "name": "",
         "topic": "data/combined",
-        "qos": "2",
+        "qos": "0",
         "datatype": "auto-detect",
         "broker": "cdf672981e934209",
         "nl": false,
@@ -224,8 +224,6 @@
         "g": "3808b3b0abf131f7",
         "name": "",
         "links": [
-            "6a0d6344d5559850",
-            "1d325151593e5d32",
             "7961799d126d1b31"
         ],
         "x": 105,
