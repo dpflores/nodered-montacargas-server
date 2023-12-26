@@ -154,7 +154,7 @@
                 "t": "set",
                 "p": "filtered_data",
                 "pt": "global",
-                "to": "{\"battery\":0,\"load\":0,\"pressure_bar\":0,\"pressure_psi\":0,\"latitude\":0,\"longitude\":0,\"altitude\":0,\"speed\":0}",
+                "to": "{\"battery\":0,\"load\":0,\"pressure_bar\":0,\"pressure_psi\":0,\"latitude\":0,\"longitude\":0,\"altitude\":0,\"speed\":0,\"status\":0}",
                 "tot": "json"
             }
         ],
@@ -168,6 +168,16 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "078a3abe5f1264be",
+        "type": "comment",
+        "z": "28df018e4ea7c83e",
+        "name": "Apagado por defecto",
+        "info": "",
+        "x": 650,
+        "y": 80,
+        "wires": []
     },
     {
         "id": "1de59b82acd33bdc",
