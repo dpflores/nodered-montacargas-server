@@ -197,7 +197,6 @@
         "wires": [
             [
                 "39bec495e61bf8d8",
-                "105cbee75b813812",
                 "6d14a03a6790bbb7"
             ]
         ]
@@ -533,39 +532,16 @@
         "wires": []
     },
     {
-        "id": "105cbee75b813812",
-        "type": "trigger",
-        "z": "faaa4f54ed7597d7",
-        "name": "",
-        "op1": "1",
-        "op2": "0",
-        "op1type": "str",
-        "op2type": "str",
-        "duration": "250",
-        "extend": false,
-        "overrideDelay": false,
-        "units": "ms",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 340,
-        "y": 180,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "6d14a03a6790bbb7",
         "type": "timeout",
         "z": "faaa4f54ed7597d7",
         "name": "Connection Timeout",
         "outtopic": "",
-        "outsafe": "Safe",
-        "outwarning": "Warning",
-        "outunsafe": "Unsafe",
-        "warning": "10",
-        "timer": "30",
+        "outsafe": "connected",
+        "outwarning": "disconnected",
+        "outunsafe": "shutdown",
+        "warning": "60",
+        "timer": "120",
         "repeat": false,
         "again": false,
         "x": 340,
