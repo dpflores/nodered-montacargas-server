@@ -430,31 +430,6 @@
         ]
     },
     {
-        "id": "252f650c7464a3f8",
-        "type": "change",
-        "z": "faaa4f54ed7597d7",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "filtered_data",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 740,
-        "y": 100,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "6aaedab152bbc411",
         "type": "function",
         "z": "faaa4f54ed7597d7",
@@ -470,8 +445,8 @@
         "y": 100,
         "wires": [
             [
-                "252f650c7464a3f8",
-                "d6d487151bb1c2ad"
+                "d6d487151bb1c2ad",
+                "252f650c7464a3f8"
             ]
         ]
     },
@@ -647,6 +622,73 @@
             [
                 "4f9d2a60e14dab41"
             ]
+        ]
+    },
+    {
+        "id": "252f650c7464a3f8",
+        "type": "change",
+        "z": "faaa4f54ed7597d7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filtered_data.battery",
+                "pt": "global",
+                "to": "payload.battery",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "filtered_data.load",
+                "pt": "global",
+                "to": "payload.load",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "filtered_data.pressure_psi",
+                "pt": "global",
+                "to": "payload.pressure_psi",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "filtered_data.latitude",
+                "pt": "global",
+                "to": "payload.latitude",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "filtered_data.longitude",
+                "pt": "global",
+                "to": "payload.longitude",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "filtered_data.altitude",
+                "pt": "global",
+                "to": "payload.altitude",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "filtered_data.speed",
+                "pt": "global",
+                "to": "payload.speed",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 100,
+        "wires": [
+            []
         ]
     },
     {
