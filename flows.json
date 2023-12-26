@@ -56,7 +56,7 @@
         ],
         "x": 74,
         "y": 619,
-        "w": 572,
+        "w": 552,
         "h": 82
     },
     {
@@ -91,7 +91,7 @@
         "sessionExpiry": ""
     },
     {
-        "id": "45598baf2af77f76",
+        "id": "900cbd7c7392856c",
         "type": "MySQLdatabase",
         "name": "",
         "host": "localhost",
@@ -175,7 +175,7 @@
         "type": "mysql",
         "z": "faaa4f54ed7597d7",
         "g": "3808b3b0abf131f7",
-        "mydb": "45598baf2af77f76",
+        "mydb": "900cbd7c7392856c",
         "name": "",
         "x": 1120,
         "y": 460,
@@ -325,9 +325,9 @@
         "type": "mysql",
         "z": "faaa4f54ed7597d7",
         "g": "686d9ccfaccf762f",
-        "mydb": "45598baf2af77f76",
+        "mydb": "",
         "name": "",
-        "x": 560,
+        "x": 550,
         "y": 660,
         "wires": [
             []
@@ -538,7 +538,7 @@
         "type": "mysql",
         "z": "f3559f90766b0184",
         "d": true,
-        "mydb": "45598baf2af77f76",
+        "mydb": "",
         "name": "",
         "x": 540,
         "y": 120,
@@ -919,7 +919,7 @@
         "type": "mysql",
         "z": "f3559f90766b0184",
         "d": true,
-        "mydb": "45598baf2af77f76",
+        "mydb": "",
         "name": "",
         "x": 560,
         "y": 780,
@@ -1030,7 +1030,7 @@
         "type": "mysql",
         "z": "f3559f90766b0184",
         "d": true,
-        "mydb": "45598baf2af77f76",
+        "mydb": "",
         "name": "",
         "x": 600,
         "y": 1000,
