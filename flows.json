@@ -24,6 +24,14 @@
         "env": []
     },
     {
+        "id": "dd314c22813d11fc",
+        "type": "tab",
+        "label": "SYSTEM STATUS",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "3808b3b0abf131f7",
         "type": "group",
         "z": "faaa4f54ed7597d7",
