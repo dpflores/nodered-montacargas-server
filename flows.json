@@ -678,6 +678,13 @@
                 "pt": "global",
                 "to": "payload.speed",
                 "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "filtered_data.pressure_bar",
+                "pt": "global",
+                "to": "payload.pressure_bar",
+                "tot": "msg"
             }
         ],
         "action": "",
