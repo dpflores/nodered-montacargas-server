@@ -336,19 +336,6 @@
         ]
     },
     {
-        "id": "7961799d126d1b31",
-        "type": "link out",
-        "z": "faaa4f54ed7597d7",
-        "name": "link out 1",
-        "mode": "link",
-        "links": [
-            "5aab794bde737cdc"
-        ],
-        "x": 1215,
-        "y": 180,
-        "wires": []
-    },
-    {
         "id": "252f650c7464a3f8",
         "type": "change",
         "z": "faaa4f54ed7597d7",
@@ -370,9 +357,7 @@
         "x": 1000,
         "y": 100,
         "wires": [
-            [
-                "7961799d126d1b31"
-            ]
+            []
         ]
     },
     {
