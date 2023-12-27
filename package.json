@@ -3,7 +3,8 @@
     "description": "Sistema que se comunica con el dashboard del montacargas",
     "version": "0.0.1",
     "dependencies": {
-        "node-red-node-mysql": "1.0.3"
+        "node-red-node-mysql": "1.0.3",
+        "node-red-contrib-timeout": "1.1.5"
     },
     "node-red": {
         "settings": {
