@@ -154,7 +154,7 @@
                 "t": "set",
                 "p": "filtered_data",
                 "pt": "global",
-                "to": "{\"timestamp\":0,\"battery\":0,\"load\":0,\"pressure_bar\":0,\"pressure_psi\":0,\"latitude\":0,\"longitude\":0,\"altitude\":0,\"speed\":0,\"mantto\":0,\"status\":0}",
+                "to": "{\"timestamp\":0,\"battery\":0,\"load\":0,\"pressure_bar\":0,\"pressure_psi\":0,\"latitude\":0,\"longitude\":0,\"altitude\":0,\"speed\":0,\"mantto\":0,\"state\":0}",
                 "tot": "json"
             }
         ],
