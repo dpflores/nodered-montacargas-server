@@ -250,8 +250,7 @@
         "y": 100,
         "wires": [
             [
-                "39bec495e61bf8d8",
-                "6d14a03a6790bbb7"
+                "39bec495e61bf8d8"
             ]
         ]
     },
@@ -529,7 +528,7 @@
         "rules": [
             {
                 "t": "eq",
-                "v": "A13CHH",
+                "v": "TEST",
                 "vt": "str"
             }
         ],
@@ -540,7 +539,8 @@
         "y": 100,
         "wires": [
             [
-                "6aaedab152bbc411"
+                "6aaedab152bbc411",
+                "6d14a03a6790bbb7"
             ]
         ]
     },
@@ -573,7 +573,7 @@
         "timer": "120",
         "repeat": false,
         "again": false,
-        "x": 320,
+        "x": 560,
         "y": 40,
         "wires": [
             [
@@ -593,7 +593,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 830,
+        "x": 1070,
         "y": 40,
         "wires": []
     },
@@ -616,7 +616,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 580,
+        "x": 820,
         "y": 40,
         "wires": [
             [
