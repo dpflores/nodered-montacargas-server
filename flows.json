@@ -632,6 +632,13 @@
         "rules": [
             {
                 "t": "set",
+                "p": "filtered_data.timestamp",
+                "pt": "global",
+                "to": "payload.timestamp",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
                 "p": "filtered_data.battery",
                 "pt": "global",
                 "to": "payload.battery",
@@ -691,13 +698,6 @@
                 "p": "filtered_data.mantto",
                 "pt": "global",
                 "to": "payload.mantto",
-                "tot": "msg"
-            },
-            {
-                "t": "set",
-                "p": "filtered_data.timestamp",
-                "pt": "global",
-                "to": "payload.timestamp",
                 "tot": "msg"
             }
         ],
