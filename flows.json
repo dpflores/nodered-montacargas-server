@@ -154,7 +154,7 @@
                 "t": "set",
                 "p": "filtered_data",
                 "pt": "global",
-                "to": "{\"timestamp\":0,\"battery\":0,\"load\":0,\"pressure_bar\":0,\"pressure_psi\":0,\"latitude\":0,\"longitude\":0,\"altitude\":0,\"speed\":0,\"mantto\":0,\"state\":0}",
+                "to": "{\"valid_data\":0,\"timestamp\":0,\"battery\":0,\"load\":0,\"pressure_bar\":0,\"pressure_psi\":0,\"latitude\":0,\"longitude\":0,\"altitude\":0,\"speed\":0,\"mantto\":0,\"state\":0}",
                 "tot": "json"
             }
         ],
@@ -455,7 +455,7 @@
         "z": "faaa4f54ed7597d7",
         "g": "3808b3b0abf131f7",
         "name": "get global",
-        "func": "var data_json = global.get(\"filtered_data\");\nmsg.payload = data_json;\nreturn msg;",
+        "func": "var data_json = global.get(\"filtered_data\");\nif (data_json.valid_data){\n    msg.payload = data_json;\nreturn msg;\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -507,7 +507,7 @@
         "z": "faaa4f54ed7597d7",
         "g": "3808b3b0abf131f7",
         "name": "debug 176",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -699,6 +699,13 @@
                 "pt": "global",
                 "to": "payload.mantto",
                 "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "filtered_data.valid_data",
+                "pt": "global",
+                "to": "1",
+                "tot": "num"
             }
         ],
         "action": "",
@@ -706,7 +713,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 730,
+        "x": 720,
         "y": 100,
         "wires": [
             []
