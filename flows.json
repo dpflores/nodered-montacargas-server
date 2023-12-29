@@ -1690,6 +1690,40 @@
         ]
     },
     {
+        "id": "6304866a3c25ef77",
+        "type": "inject",
+        "z": "dd314c22813d11fc",
+        "name": "reset",
+        "props": [
+            {
+                "p": "reset",
+                "v": "true",
+                "vt": "bool"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1250,
+        "y": 740,
+        "wires": [
+            [
+                "cb6edc6f10eaa8bc",
+                "9fe52546eacda34b",
+                "ff9d160431046443",
+                "13c7b5ae10a42719",
+                "3789ccf745c111f1",
+                "bbf629fb4293d368"
+            ]
+        ]
+    },
+    {
         "id": "4d4295502b9089fd",
         "type": "http in",
         "z": "f3559f90766b0184",
