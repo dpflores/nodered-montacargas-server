@@ -1663,7 +1663,7 @@
         "z": "5535ca07b24e93fb",
         "name": "",
         "topic": "test",
-        "cycle": "15",
+        "cycle": "1",
         "x": 650,
         "y": 260,
         "wires": [
