@@ -920,7 +920,7 @@
         "type": "debug",
         "z": "dd314c22813d11fc",
         "name": "debug 179",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
