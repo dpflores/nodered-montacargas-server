@@ -806,7 +806,8 @@
         "wires": [
             [
                 "39bec495e61bf8d8",
-                "3a44434d17c5e47d"
+                "3a44434d17c5e47d",
+                "fe36cfcbf9820778"
             ]
         ]
     },
@@ -825,6 +826,24 @@
         "x": 310,
         "y": 180,
         "wires": []
+    },
+    {
+        "id": "fe36cfcbf9820778",
+        "type": "function",
+        "z": "faaa4f54ed7597d7",
+        "name": "last message",
+        "func": "node.status({fill:\"green\",shape:\"ring\",text:`${msg.payload.timestamp}`});\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 220,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "c48ac26aed2c26b5",
