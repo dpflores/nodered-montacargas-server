@@ -806,8 +806,7 @@
         "wires": [
             [
                 "39bec495e61bf8d8",
-                "3a44434d17c5e47d",
-                "fe36cfcbf9820778"
+                "3a44434d17c5e47d"
             ]
         ]
     },
@@ -832,17 +831,38 @@
         "type": "function",
         "z": "faaa4f54ed7597d7",
         "name": "last message",
-        "func": "node.status({fill:\"green\",shape:\"ring\",text:`${msg.payload.timestamp}`});\nreturn msg;",
+        "func": "\nnode.status({fill:\"green\",shape:\"ring\",text:`${msg.payload.timestamp}`});\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 330,
-        "y": 220,
+        "x": 510,
+        "y": 240,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "1609b8f04adbaca4",
+        "type": "mqtt in",
+        "z": "faaa4f54ed7597d7",
+        "name": "",
+        "topic": "data/combined",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "cdf672981e934209",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 240,
+        "wires": [
+            [
+                "fe36cfcbf9820778"
+            ]
         ]
     },
     {
