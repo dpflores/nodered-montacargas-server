@@ -538,18 +538,24 @@
                 "t": "eq",
                 "v": "A13CHH",
                 "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "A13CF8",
+                "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 1,
+        "outputs": 2,
         "x": 320,
         "y": 100,
         "wires": [
             [
                 "6aaedab152bbc411",
                 "6d14a03a6790bbb7"
-            ]
+            ],
+            []
         ]
     },
     {
