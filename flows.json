@@ -552,11 +552,11 @@
         "x": 320,
         "y": 100,
         "wires": [
-            [],
             [
                 "6d14a03a6790bbb7",
                 "6aaedab152bbc411"
-            ]
+            ],
+            []
         ]
     },
     {
@@ -829,8 +829,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 310,
-        "y": 180,
+        "x": 350,
+        "y": 200,
         "wires": []
     },
     {
